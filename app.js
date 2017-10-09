@@ -26,3 +26,11 @@ var client = new Twitter({
 client.get(path, params, callback);
 client.post(path, params, callback);
 client.stream(path, params, callback);
+
+//REST API
+
+client.get('favorites/list', function(error, tweets, response) {
+  if(error) throw error;
+  console.log(tweets); // tweet body
+  console.log(response); // raw response object
+})
