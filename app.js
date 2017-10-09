@@ -1,3 +1,19 @@
+// express code for setting up express server Davis Silva
+
+const express = require('express');
+const app = express();
+
+app.get('/', function(req, res){
+  res.status(200).send)('Hello world');
+});
+
+const PORT = process.env.HTTP_PORT || 3000;
+const APPLICATION_NAME = process.env.APPLICATION_NAME || '';
+
+app.listen(PORT, function(){
+  console.log('Application ' + APPLICATION_NAME + ', listening on port:' + PORT);
+});
+
 var Twitter = require('twitter');
 
 // for user based authentication:
@@ -16,6 +32,7 @@ var Twitter = require('twitter');
 // });
 
 // application only based authentication
+var path = require('path');
 
 var client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
